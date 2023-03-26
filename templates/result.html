@@ -1,0 +1,91 @@
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-dark table-hover" align="center" border="1">
+                    <h3 align="center"><u><b>SCORE</b></u></h3>
+                    <thead>
+                    <tr>
+                      <th scope="col"><b>METRIC</b></th>
+                      <th scope="col"><b>VALUE</b></th>
+                    </tr>
+                </thead>
+                    <tr>
+                      <td>Access Vector</td>
+                      <td>{{access_vector}}</td>
+                    </tr>
+                    <tr>
+                      <td>Access Complexity</td>
+                      <td>{{access_complexity}}</td>
+                    </tr>
+                    <tr>
+                      <td>Authentication</td>
+                      <td>{{authentication}}</td>
+                    </tr>
+                    <tr>
+                      <td>Confidentiality Impact</td>
+                      <td>{{confidentiality_impact}}</td>
+                    </tr>
+                    <tr>
+                      <td>Integrity Impact</td>
+                      <td>{{integrity_impact}}</td>
+                    </tr>
+                    <tr>
+                      <td>Availability Impact</td>
+                      <td>{{availability_impact}}</td>
+                    </tr>
+                    <tr>
+                    </table>
+
+                    <table class="table table-dark table-hover" align="center" border="1">
+                      <td><b>CVSS Score</b></td>
+                      <td><b>{{cvss_score}}</b></td>
+                    </tr>
+                    <tr>
+                      <td><b>Severity</b></td>
+                      <td><b>{{severity}}</b></td>
+                    </tr>
+            
+                  </table>
+            </div>
+        </div>
+    </div>
+      <style>
+        td {
+            padding: 1em;
+
+        }
+
+        body{
+            background-color: darkgrey;
+        }
+      </style>
+      
+<!--
+    <table>
+        <p align="center"><u>SCORE</u></p>
+        <p align="center">Access vector is : {{access_vector}}</p>
+        <p align="center">Access complexity is : {{access_complexity}}</p>
+        <p align="center">Authentication is : {{authentication}}</p>
+        <p align="center">Confidentiality impact is : {{confidentiality_impact}}</p>
+        <p align="center">Integrity impact is : {{integrity_impact}}</p>
+        <p align="center">Availability_impact : {{availability_impact}}</p>
+        <p align="center">CVSS Score: {{ cvss_score }}</p>
+        <p align="center">Severity: {{ severity }}</p>
+    </table>
+-->
+    <!--
+    <p align="center">Score is : {{cvss_score, severity}}
+
+    </p> -->
+
+
+    <a href="{{url_for('cvss')}}">Recalculate the Score</a>
+
+  </body>
+</html>
+ 

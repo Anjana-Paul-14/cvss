@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVSS application</title>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form action="/cvss" method="POST" align="center">
+          <p style="color: brown;">{{error}}
+          </p>
+          <h1><u>CVSS Score Calculator</u></h1>
+          <div class="input-field">
+    
+    
+            <table align="center">
+              <tr>
+                <td> Choose the Access Vector</td>
+                <td>
+                  <select name="access_vector" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="network">Network</option>
+                    <option value="adjacent">Adjacent</option>
+                    <option value="local">Local</option>
+                    <option value="physical">Physical</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Choose the Access Complexity</td>
+                <td>
+                  <select  name="access_complexity" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Choose the Authentication</td>
+                <td>
+                  <select  name="authentication" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="none">None</option>
+                    <option value="single">Single</option>
+                    <option value="multiple">Multiple</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Choose theConfidentiality Impact</td>
+                <td>
+                  <select name="confidentiality_impact" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="none">None</option>
+                    <option value="partial">Partial</option>
+                    <option value="complete">Complete</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Choose the Integrity Impact</td>
+                <td>
+                  <select name="integrity_impact" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="none">None</option>
+                    <option value="partial">Partial</option>
+                    <option value="complete">Complete</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Choose the Availability Impact</td>
+                <td>
+                  <select name="availability_impact" required="true">
+                    <option value="" disabled selected>Select</option>
+                    
+                    <option value="none">None</option>
+                    <option value="partial">Partial</option>
+                    <option value="complete">Complete</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+        
+          </div>
+          <button type="submit" value="submit"> SUBMIT </button>
+        
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .input-field {
+      margin-bottom: 20px;
+    }
+
+    
+    select {
+        width: 200px; 
+      }
+      body{
+          background-color: darkgrey;
+      }
+      td {
+          padding: 1em;
+
+      }
+
+  </style>
+      
+   <!-- 
+    <form action="/" method="POST" align="center">
+    <h1><u>CVSS Score Calculator</u></h1>
+    <div class="input-field">
+
+      <p>Access Vector (Network/Adjacent/Local/Physical):
+        <select required 
+        <option value="" di>please select an option</option>name="access_vector">
+          <option value="select">Select</option> 
+          <option value="network">Network</option>
+          <option value="adjacent">Adjacent</option>
+          <option value="local">Local</option>
+          <option value="physical">Physical</option>
+        </select>
+      </p>
+  
+      <p>Access Complexity (Low//Medium/High):
+        <select name="access_complexity">
+            <option value="select">Select</option> 
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+      </p>
+  
+      <p>authentication (None/Single/Multiple):
+        <select name="authentication">
+            <option value="select">Select</option> 
+            <option value="none">None</option>
+            <option value="single">Single</option>
+            <option value="multiple">Multiple</option>
+        </select>
+      </p>
+    
+      <p>confidentiality impact (None/Partial/Complete):
+        <select name="confidentiality_impact">
+            <option value="select">Select</option> 
+            <option value="none">None</option>
+            <option value="partial">Partial</option>
+            <option value="complete">Complete</option>
+        </select>
+      </p>
+    
+      <p>integrity impact (None/Partial/Complete):
+        <select name="integrity_impact">
+            <option value="select">Select</option> 
+            <option value="none">None</option>
+            <option value="partial">Partial</option>
+            <option value="complete">Complete</option>
+        </select>
+      </p> 
+      <p>availability impact (None/Partial/Complete):
+        <select name="availability_impact">
+            <option value="select">Select</option> 
+            <option value="none">None</option>
+            <option value="partial">Partial</option>
+            <option value="complete">Complete</option>
+        </select>
+      </p> 
+    
+
+    </div>
+    <button type="submit" value="submit"> SUBMIT </button>
+
+  </form> 
+-->
+</body>
+</html>
+
+
+      
